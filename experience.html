@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiencia — Alonso Romero</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .page-header{padding:10rem 4rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .page-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
+    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);margin-bottom:1rem;}
+    .page-header h1 em{font-style:italic;color:var(--accent);}
+    .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:680px;}
+    section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
+    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
+    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
+
+    /* TIMELINE */
+    .timeline{display:flex;flex-direction:column;gap:0;}
+    .exp-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;margin-bottom:1rem;position:relative;}
+    .exp-card.current{border-color:var(--accent);}
+    .exp-card.current::before{content:'Actual';position:absolute;top:1.5rem;right:1.5rem;font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:0.2rem 0.6rem;border-radius:2px;}
+    .exp-header{display:grid;grid-template-columns:auto 1fr auto;gap:1.25rem;align-items:start;margin-bottom:1.25rem;}
+    .exp-logo{width:44px;height:44px;background:var(--accent-light);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .exp-company{font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem;}
+    .exp-role{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--text);letter-spacing:-0.01em;line-height:1.2;}
+    .exp-period{font-size:0.8rem;color:var(--muted);font-weight:500;white-space:nowrap;padding-top:0.25rem;}
+    .exp-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem;}
+    .exp-tag{font-size:0.65rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.15rem 0.5rem;border-radius:2px;}
+    .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+    .exp-bullets li{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.65;padding-left:1.25rem;position:relative;}
+    .exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;top:0.05em;}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
+    footer p{font-size:0.8rem;color:var(--muted);}
+    .footer-philosophy{font-family:'DM Serif Display',serif;font-style:italic;font-size:0.85rem;color:var(--accent);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.exp-header{grid-template-columns:auto 1fr;}.exp-period{grid-column:1/-1;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alonso Romero</a>
+    <ul class="nav-links">
+      <li><a href="about.html">Sobre mí</a></li>
+      <li><a href="projects.html">Proyectos</a></li>
+      <li><a href="experience.html" class="active">Experiencia</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-label">Experiencia</span>
+    <h1>Trabajo que genera <em>valor real.</em></h1>
+    <p>De proyectos de robótica minera a transformaciones digitales a escala de holding, pasando por la docencia y la innovación social.</p>
+  </div>
+
+  <!-- EXPERIENCIA PROFESIONAL -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Experiencia profesional</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- TRABAJO ACTUAL (placeholder) -->
+      <div class="exp-card current fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">💼</div>
+          <div class="exp-meta">
+            <div class="exp-company">Próximo rol</div>
+            <div class="exp-role">Trabajo profesional part-time</div>
+          </div>
+          <div class="exp-period">2026 — Presente</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Por confirmar</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Detalles próximamente. Incorporación en 2026.</li>
+        </ul>
+      </div>
+
+      <!-- SK CONVERGE -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">⚙️</div>
+          <div class="exp-meta">
+            <div class="exp-company">SK Converge — Sigdo Koppers</div>
+            <div class="exp-role">Analista de Datos</div>
+          </div>
+          <div class="exp-period">Ago 2025 — Nov 2025 · 4 meses</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Práctica</span>
+          <span class="exp-tag">Data Analytics</span>
+          <span class="exp-tag">SAP S/4HANA</span>
+          <span class="exp-tag">Transformación Digital</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Participé en la migración Bluefield de SAP ECC a S/4HANA del holding Sigdo Koppers, uno de los procesos de transformación digital de mayor escala en la industria chilena — 9 empresas con unidades de negocio internacionales.</li>
+          <li>Desarrollé cruces de datos y métricas comparativas entre múltiples entornos SAP para respaldar decisiones de control de calidad en cada ciclo de prueba, aplicando análisis exploratorio y validación a escala de holding.</li>
+          <li>Detecté patrones de error recurrentes entre los mocks mediante análisis de trazabilidad por módulo SAP y empresa afectada, generando insights accionables que derivaron en planes de mitigación efectivos previo al Go-Live.</li>
+          <li>Diseñé e implementé una métrica de carga laboral con visualización integrada y sugerencias automáticas de reasignación de recursos, reduciendo cuellos de botella en el equipo de pruebas.</li>
+          <li>Automaticé el informe semanal del proyecto integrando datos del cronograma Gantt, mejorando la precisión y velocidad del seguimiento ejecutivo.</li>
+          <li>Investigué y conduje pilotos de automatización en Panaya, evaluando su escalabilidad para procesos SAP a nivel de holding.</li>
+        </ul>
+      </div>
+
+      <!-- INNSPIRAL -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">💡</div>
+          <div class="exp-meta">
+            <div class="exp-company">INNSPIRAL</div>
+            <div class="exp-role">Analista de Negocios de Innovación</div>
+          </div>
+          <div class="exp-period">Ene 2025 — Abr 2025 · 4 meses</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Práctica</span>
+          <span class="exp-tag">Innovación</span>
+          <span class="exp-tag">Análisis Estratégico</span>
+          <span class="exp-tag">Energía Solar</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Análisis estratégico y evaluación de iniciativas de innovación en el marco de la alianza Tara-Paka (Fundación Collahuasi + Gobierno Regional de Tarapacá).</li>
+          <li>Realicé evaluaciones económicas de 3 programas de energía solar, demostrando viabilidad e impacto social positivo para respaldo de inversión pública.</li>
+          <li>Evalué comercialmente 2 tecnologías agrícolas para zonas desérticas, entregando recomendaciones estratégicas basadas en datos para su implementación.</li>
+          <li>Recopilé, analicé y visualicé datos de seguridad regional, identificando brechas que justifican el desarrollo de soluciones tecnológicas innovadoras.</li>
+        </ul>
+      </div>
+
+      <!-- SK GODELIUS -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">🤖</div>
+          <div class="exp-meta">
+            <div class="exp-company">SK Godelius — Sigdo Koppers</div>
+            <div class="exp-role">Scrum Master</div>
+          </div>
+          <div class="exp-period">Ene 2023 — Mar 2023 · 3 meses</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Práctica</span>
+          <span class="exp-tag">Scrum</span>
+          <span class="exp-tag">Robótica Minera</span>
+          <span class="exp-tag">Gestión Ágil</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Lideré la implementación de Scrum en un proyecto piloto de robótica minera y lo escalé a dos iniciativas adicionales.</li>
+          <li>Diseñé un marco ágil adaptado a las dinámicas internas de la organización, acelerando la gestión de proyectos tecnológicos.</li>
+          <li>Administré Jira para planificación y seguimiento de sprints, logrando mayor claridad en prioridades y reduciendo el desgaste del equipo.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- AYUDANTÍAS -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Ayudantías universitarias</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- AYUDANTE PROYECTO 2026 -->
+      <div class="exp-card current fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">🎓</div>
+          <div class="exp-meta">
+            <div class="exp-company">Facultad de Ingeniería y Ciencias Aplicadas · UANDES</div>
+            <div class="exp-role">Ayudante de Proyecto</div>
+          </div>
+          <div class="exp-period">Mar 2026 — Presente</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Docencia</span>
+          <span class="exp-tag">Modelos Estocásticos</span>
+          <span class="exp-tag">Evaluación de Proyectos</span>
+          <span class="exp-tag">Transformación Digital</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Modelos Estocásticos:</strong> Evaluación y corrección de controles y pruebas, apoyando el aprendizaje en probabilidad aplicada, Procesos de Decisión de Markov y Teoría de Colas.</li>
+          <li><strong>Diseño y Evaluación de Proyectos Industriales:</strong> Revisión y retroalimentación de informes que abarcan desde estudios de factibilidad hasta evaluación económica con flujos de caja y gemelos digitales.</li>
+          <li><strong>Tecnologías para la Transformación Digital:</strong> Evaluación de proyectos analizando modelos de negocio, estrategias de monetización, investigación de usuarios y definición de KPIs.</li>
+        </ul>
+      </div>
+
+      <!-- AYUDANTE CORRECTOR GESTIÓN ESTRATÉGICA -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">🎓</div>
+          <div class="exp-meta">
+            <div class="exp-company">Facultad de Ingeniería y Ciencias Aplicadas · UANDES</div>
+            <div class="exp-role">Ayudante Corrector — Gestión Estratégica</div>
+          </div>
+          <div class="exp-period">Sep 2025 — Dic 2025 · 4 meses</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Docencia</span>
+          <span class="exp-tag">Estrategia</span>
+          <span class="exp-tag">SWOT / Porter / PESTEL</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Apoyé al equipo docente en la corrección y retroalimentación de evaluaciones, asegurando consistencia y rigurosidad académica.</li>
+          <li>Evalué trabajos aplicados sobre análisis de entorno, formulación de estrategias competitivas y modelos de negocio utilizando frameworks como SWOT, PESTEL, 5 Fuerzas de Porter y Modelo Delta.</li>
+        </ul>
+      </div>
+
+      <!-- AYUDANTE MODELOS ESTOCÁSTICOS 2023 -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-logo">🎓</div>
+          <div class="exp-meta">
+            <div class="exp-company">Facultad de Ingeniería y Ciencias Aplicadas · UANDES</div>
+            <div class="exp-role">Ayudante Corrector — Modelos Estocásticos</div>
+          </div>
+          <div class="exp-period">Mar 2023 — Jun 2023 · 4 meses</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Docencia</span>
+          <span class="exp-tag">Probabilidad</span>
+          <span class="exp-tag">Cadenas de Markov</span>
+          <span class="exp-tag">Teoría de Colas</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Apoyé la corrección y retroalimentación de evaluaciones, asegurando rigurosidad académica y consistencia en los criterios.</li>
+          <li>Evalué trabajos aplicados sobre probabilidades, Modelos de Markov y Teoría de Colas, contribuyendo al aprendizaje de los estudiantes.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alonso Romero Sánchez</p>
+    <span class="footer-philosophy">Problema → Modelo → Impacto</span>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

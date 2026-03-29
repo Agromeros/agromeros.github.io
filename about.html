@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre mí — Alonso Romero</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+
+    /* PAGE HEADER */
+    .page-header{padding:10rem 4rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .page-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
+    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);margin-bottom:1rem;}
+    .page-header h1 em{font-style:italic;color:var(--accent);}
+    .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:680px;}
+
+    section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
+    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
+    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
+
+    /* BIO GRID */
+    .bio-grid{display:grid;grid-template-columns:2fr 1fr;gap:5rem;align-items:start;}
+    .bio-text p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1.25rem;}
+    .bio-text p:last-child{margin-bottom:0;}
+    .bio-sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+    .bio-stat{border-left:2px solid var(--accent);padding-left:1rem;}
+    .bio-stat-label{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;}
+    .bio-stat-value{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);line-height:1.3;}
+
+    /* EDUCATION */
+    .edu-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2rem;margin-bottom:1rem;}
+    .edu-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:0.75rem;gap:2rem;}
+    .edu-institution{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--text);letter-spacing:-0.01em;}
+    .edu-period{font-size:0.75rem;font-weight:500;color:var(--muted);letter-spacing:0.05em;white-space:nowrap;padding-top:0.25rem;}
+    .edu-degree{font-size:0.95rem;color:var(--accent);font-weight:500;margin-bottom:0.5rem;}
+    .edu-desc{font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.6;}
+
+    /* SKILLS GRID */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+    .skill-category{background:var(--white);padding:2rem;}
+    .skill-category-title{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;}
+    .skill-items{display:flex;flex-direction:column;gap:0.5rem;}
+    .skill-item{font-size:0.9rem;color:var(--text);display:flex;align-items:center;gap:0.6rem;}
+    .skill-item::before{content:'';display:block;width:4px;height:4px;background:var(--accent);border-radius:50%;flex-shrink:0;}
+
+    /* COURSES */
+    .courses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+    .course-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;}
+    .course-icon{font-size:1.1rem;flex-shrink:0;}
+    .course-name{font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.15rem;}
+    .course-issuer{font-size:0.75rem;color:var(--muted);}
+
+    /* INTERESTS */
+    .interests-row{display:flex;flex-wrap:wrap;gap:0.75rem;}
+    .interest-pill{display:flex;align-items:center;gap:0.5rem;background:var(--white);border:1px solid var(--border);border-radius:4px;padding:0.6rem 1rem;font-size:0.875rem;color:var(--text);}
+
+    /* LANGUAGES */
+    .lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .lang-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;}
+    .lang-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);margin-bottom:0.25rem;}
+    .lang-level{font-size:0.75rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
+    footer p{font-size:0.8rem;color:var(--muted);}
+    .footer-philosophy{font-family:'DM Serif Display',serif;font-style:italic;font-size:0.85rem;color:var(--accent);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.bio-grid{grid-template-columns:1fr;gap:3rem;}.skills-grid{grid-template-columns:1fr;}.courses-grid{grid-template-columns:1fr;}.lang-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alonso Romero</a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">Sobre mí</a></li>
+      <li><a href="projects.html">Proyectos</a></li>
+      <li><a href="experience.html">Experiencia</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-label">Sobre mí</span>
+    <h1>Ingeniero que piensa en <em>sistemas.</em></h1>
+    <p>Combino rigor cuantitativo con visión de negocio para diseñar soluciones de IA que funcionan en el mundo real, no solo en el notebook.</p>
+  </div>
+
+  <!-- BIO -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Quién soy</h2>
+    </div>
+    <div class="bio-grid fade-in">
+      <div class="bio-text">
+        <p>Soy Alonso Romero, egresado de Ingeniería Civil Industrial con mención en Ciencia de Datos de la Universidad de los Andes en Santiago de Chile. Durante mi formación desarrollé una doble mirada: la del ingeniero que entiende procesos, costos y estrategia, y la del científico de datos que sabe cómo extraer valor de la información.</p>
+        <p>Mi pasión es aplicar técnicas avanzadas de inteligencia artificial —especialmente aprendizaje por refuerzo profundo y modelamiento de series temporales— para resolver problemas complejos en sistemas reales. No me interesa el modelo por el modelo: lo que me mueve es el impacto medible que genera en quien lo opera.</p>
+        <p>He tenido la oportunidad de trabajar en distintos contextos: desde la transformación digital a escala de holding en SK Converge hasta el análisis de innovación con impacto social en INNSPIRAL, pasando por ayudantías universitarias donde fortalecí mi capacidad de comunicar conceptos complejos con claridad.</p>
+        <p>Busco oportunidades como Junior AI/ML Engineer, Data Scientist o Analista de Datos, y siempre estoy abierto a conversar con personas que quieran construir algo con impacto real.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- EDUCACIÓN -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Educación</h2>
+    </div>
+    <div class="fade-in">
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-institution">Universidad de los Andes</div>
+            <div class="edu-degree">Ingeniería Civil Industrial — Mención en Ciencia de Datos</div>
+          </div>
+          <div class="edu-period">Mar 2020 — Jun 2026</div>
+        </div>
+        <p class="edu-desc">Formación integral en ingeniería con énfasis en modelamiento cuantitativo, toma de decisiones bajo incertidumbre y sistemas de información. La mención en Ciencia de Datos profundizó en machine learning, optimización y visualización de datos. 
+          Realicé una tesis de grado en control con aprendizaje por refuerzo profundo aplicado a turbinas eólicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Stack técnico</h2>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-category">
+        <div class="skill-category-title">IA &amp; Machine Learning</div>
+        <div class="skill-items">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">TensorFlow / Keras</span>
+          <span class="skill-item">Scikit-learn</span>
+          <span class="skill-item">Stable-Baselines3</span>
+          <span class="skill-item">Optuna / Keras-Tuner</span>
+          <span class="skill-item">Deep Reinforcement Learning</span>
+          <span class="skill-item">LSTM</span>
+          <span class="skill-item">Offline RL</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">Datos &amp; Análisis</div>
+        <div class="skill-items">
+          <span class="skill-item">Pandas / NumPy</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">Power BI</span>
+          <span class="skill-item">Matplotlib / Seaborn</span>
+          <span class="skill-item">Jupyter Notebooks</span>
+          <span class="skill-item">Excel / VBA</span>
+          <span class="skill-item">SAP ECC / S/4HANA</span>
+          <span class="skill-item">Panaya</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">Gestión &amp; Metodologías</div>
+        <div class="skill-items">
+          <span class="skill-item">Agile / Scrum</span>
+          <span class="skill-item">Jira</span>
+          <span class="skill-item">Evaluación económica</span>
+          <span class="skill-item">Diseño de sistemas de control</span>
+          <span class="skill-item">Procesos de Decisión de Markov</span>
+          <span class="skill-item">Análisis estratégico (SWOT, Porter)</span>
+          <span class="skill-item">Modelos de negocios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- CURSOS Y CERTIFICACIONES -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Certificaciones</h2>
+    </div>
+    <div class="courses-grid fade-in">
+      <div class="course-card">
+        <div class="course-icon">🐍</div>
+        <div>
+          <div class="course-name">Python for Data Science</div>
+          <div class="course-issuer">Certificación profesional</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🤖</div>
+        <div>
+          <div class="course-name">Generative AI Overview for Project Managers</div>
+          <div class="course-issuer">Formación en IA generativa</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">⚡</div>
+        <div>
+          <div class="course-name">Agile Scrum Foundation</div>
+          <div class="course-issuer">Metodologías ágiles</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">📐</div>
+        <div>
+          <div class="course-name">Fundamentals of Agile Project Management</div>
+          <div class="course-issuer">Gestión de proyectos</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">📊</div>
+        <div>
+          <div class="course-name">Fundamentals of Predictive Project Management</div>
+          <div class="course-issuer">Gestión predictiva</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- IDIOMAS -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Idiomas</h2>
+    </div>
+    <div class="lang-grid fade-in">
+      <div class="lang-card">
+        <div class="lang-name">Español</div>
+        <div class="lang-level">Nativo</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Inglés</div>
+        <div class="lang-level">Nivel profesional</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Croata</div>
+        <div class="lang-level">Nivel básico</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- INTERESES -->
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Intereses</h2>
+    </div>
+    <div class="interests-row fade-in">
+      <div class="interest-pill">🌬️ Energías renovables</div>
+      <div class="interest-pill">🤖 Robótica e IA aplicada</div>
+      <div class="interest-pill">📈 Finanzas cuantitativas</div>
+      <div class="interest-pill">⛏️ Minería e industria</div>
+      <div class="interest-pill">💡 Innovación &amp; startups</div>
+      <div class="interest-pill">🌍 Sostenibilidad</div>
+      <div class="interest-pill">📐 Optimización de sistemas</div>
+      <div class="interest-pill">🔬 Investigación aplicada</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alonso Romero Sánchez</p>
+    <span class="footer-philosophy">Problema → Modelo → Impacto</span>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

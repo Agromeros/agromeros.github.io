@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyectos — Alonso Romero</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .page-header{padding:10rem 4rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .page-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
+    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);margin-bottom:1rem;}
+    .page-header h1 em{font-style:italic;color:var(--accent);}
+    .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:680px;}
+    section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
+    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
+    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
+
+    /* PROJECT FULL */
+    .project-full{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1.5rem;}
+    .project-full-header{padding:2.5rem 2.5rem 0;}
+    .project-full-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+    .project-tag{display:inline-block;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.2rem 0.6rem;border-radius:2px;}
+    .project-gh-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:500;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;transition:border-color 0.2s,color 0.2s;}
+    .project-gh-link:hover{border-color:var(--accent);color:var(--accent);}
+    .project-title{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.2;}
+    .project-desc{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.75rem;max-width:800px;}
+
+    /* METRICS BAND */
+    .metrics-band{background:var(--accent);padding:2rem 2.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;}
+    .metric-block{padding:0 1.5rem 0 0;}
+    .metric-block:first-child{padding-left:0;}
+    .metric-country{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.25rem;}
+    .metric-value{font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;line-height:1;}
+    .metric-label{font-size:0.7rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;letter-spacing:0.04em;}
+
+    /* PROJECT BODY */
+    .project-full-body{padding:2.5rem;}
+    .project-section-title{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+    .project-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
+    .project-detail-block p{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;}
+    .project-detail-block ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
+    .project-detail-block ul li{font-size:0.9rem;color:var(--muted);font-weight:300;padding-left:1rem;position:relative;}
+    .project-detail-block ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
+    .project-tags-stack{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .tech-pill{font-size:0.7rem;font-weight:500;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;}
+
+    /* COMING SOON */
+    .coming-soon{background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:3rem;text-align:center;color:var(--muted);}
+    .coming-soon h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.5rem;}
+    .coming-soon p{font-size:0.9rem;font-weight:300;}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
+    footer p{font-size:0.8rem;color:var(--muted);}
+    .footer-philosophy{font-family:'DM Serif Display',serif;font-style:italic;font-size:0.85rem;color:var(--accent);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.metrics-band{grid-template-columns:repeat(2,1fr);gap:1.5rem;}.project-detail-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alonso Romero</a>
+    <ul class="nav-links">
+      <li><a href="about.html">Sobre mí</a></li>
+      <li><a href="projects.html" class="active">Proyectos</a></li>
+      <li><a href="experience.html">Experiencia</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-label">Proyectos</span>
+    <h1>Sistemas de IA con <em>resultados medibles.</em></h1>
+    <p>Cada proyecto parte de un problema real. Aquí están los métodos, las decisiones de diseño y los números que importan.</p>
+  </div>
+
+  <section>
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Proyectos de IA</h2>
+    </div>
+
+    <!-- PROJECT 1 -->
+    <div class="project-full fade-in">
+      <div class="project-full-header">
+        <div class="project-full-meta">
+          <span class="project-tag">Tesis de grado · 2026</span>
+          <a href="https://github.com/agromeros/wind-turbine-pitch-control" target="_blank" class="project-gh-link">⌥ GitHub</a>
+        </div>
+        <h2 class="project-title">Control multiobjetivo del ángulo de paso en turbinas eólicas</h2>
+        <p class="project-desc">Sistema híbrido LSTM + Deep Reinforcement Learning (DDPG) para el control inteligente del pitch en aerogeneradores. El núcleo del trabajo: una función de recompensa multiobjetivo que equilibra eficiencia energética, estabilidad del rotor y fatiga mecánica —objetivos que se contradicen entre sí— y que fue validada en datos reales de dos continentes.</p>
+      </div>
+
+      <!-- METRICS BAND -->
+      <div class="metrics-band">
+        <div class="metric-block">
+          <div class="metric-country">🇨🇱 Taltal, Chile</div>
+          <div class="metric-value">95.2%</div>
+          <div class="metric-label">Eficiencia energética</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-country">🇨🇱 Taltal, Chile</div>
+          <div class="metric-value">−42%</div>
+          <div class="metric-label">Fatiga mecánica (cambios de pitch)</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-country">🇨🇭 Taggenberg, Suiza</div>
+          <div class="metric-value">72.2%</div>
+          <div class="metric-label">Eficiencia energética</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-country">🇨🇭 Taggenberg, Suiza</div>
+          <div class="metric-value">−59%</div>
+          <div class="metric-label">Impacto mecánico en rotor</div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="project-full-body">
+        <div class="project-detail-grid">
+          <div class="project-detail-block">
+            <div class="project-section-title">El problema</div>
+            <p>Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica. El control del ángulo de pitch —que regula cuánto viento captura la turbina— involucra objetivos que se contradicen: maximizar energía implica mayor estrés mecánico.</p>
+          </div>
+          <div class="project-detail-block">
+            <div class="project-section-title">La solución</div>
+            <ul>
+              <li>LSTM para predecir velocidad de viento a corto plazo</li>
+              <li>DDPG (Deep Deterministic Policy Gradient) como agente de control</li>
+              <li>Función de recompensa multiobjetivo con pesos calibrados</li>
+              <li>Entrenamiento con Offline RL sobre datos históricos reales</li>
+              <li>Optimización de hiperparámetros con Optuna</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-detail-grid">
+          <div class="project-detail-block">
+            <div class="project-section-title">Validación</div>
+            <p>El modelo fue entrenado y evaluado con datos reales de dos turbinas en contextos climáticos completamente distintos: el desierto de Atacama en Chile y los Alpes suizos. La generalización a un sitio no visto durante el entrenamiento valida la robustez del enfoque.</p>
+          </div>
+          <div class="project-detail-block">
+            <div class="project-section-title">Stack tecnológico</div>
+            <div class="project-tags-stack">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">TensorFlow / Keras</span>
+              <span class="tech-pill">Stable-Baselines3</span>
+              <span class="tech-pill">DDPG</span>
+              <span class="tech-pill">LSTM</span>
+              <span class="tech-pill">Optuna</span>
+              <span class="tech-pill">k-NN Imputation</span>
+              <span class="tech-pill">Offline RL</span>
+              <span class="tech-pill">Pandas / NumPy</span>
+              <span class="tech-pill">Matplotlib</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMING SOON -->
+    <div class="coming-soon fade-in">
+      <h3>Más proyectos en desarrollo</h3>
+      <p>Nuevos proyectos en análisis de datos, modelos predictivos e inteligencia artificial aplicada serán publicados próximamente.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alonso Romero Sánchez</p>
+    <span class="footer-philosophy">Problema → Modelo → Impacto</span>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
