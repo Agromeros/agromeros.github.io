@@ -1,6 +1,6 @@
-# alonsoromerosanchez.github.io
+# Alonso Romero Sánchez
 
-Portafolio personal · [alonsoromerosanchez.github.io](https://alonsoromerosanchez.github.io)
+Portafolio personal · [agromeros.github.io](https://alonsoromerosanchez.github.io)
 
 Entonces tu repositorio quedaría así:
 
