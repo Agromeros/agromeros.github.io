@@ -72,16 +72,18 @@
     /* HERO */
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 8rem 4rem 4rem;
-      gap: 4rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .hero-text { animation: fadeUp 0.8s ease both; }
+    .hero-top {
+      animation: fadeUp 0.8s ease both;
+      margin-bottom: 2rem;
+    }
 
     .hero-label {
       display: inline-block;
@@ -98,11 +100,11 @@
 
     .hero h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      line-height: 1.1;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 1.05;
       letter-spacing: -0.03em;
       color: var(--text);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
     }
 
     .hero h1 em {
@@ -110,10 +112,32 @@
       color: var(--accent);
     }
 
+    .hero-philosophy {
+      animation: fadeUp 0.8s ease 0.15s both;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-philosophy p {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-bottom {
+      animation: fadeUp 0.8s ease 0.3s both;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
     .hero-desc {
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 480px;
       margin-bottom: 2rem;
       font-weight: 300;
       line-height: 1.7;
@@ -156,61 +180,47 @@
 
     .btn-secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
 
-    .hero-visual {
-      animation: fadeUp 0.8s ease 0.2s both;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
     }
 
     .hero-card {
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .hero-card-label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .hero-card-value {
       font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
+      font-size: 1rem;
       color: var(--accent);
-      line-height: 1;
+      line-height: 1.25;
     }
 
     .hero-card-desc {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    .hero-cards-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .philosophy-card {
-      background: var(--accent);
-      color: var(--white);
-      border-radius: 4px;
-      padding: 1.5rem;
-    }
-
-    .philosophy-card p {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      font-style: italic;
+      margin-top: 0.2rem;
       line-height: 1.4;
     }
+
+    .hero-cards-row { display: none; }
+    .hero-visual { display: none; }
+    .philosophy-card { display: none; }
 
     /* SECTIONS */
     section {
@@ -533,8 +543,9 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-      .hero-visual { display: none; }
+      .hero { padding: 6rem 1.5rem 3rem; }
+      .hero-bottom { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-cards { grid-template-columns: 1fr; }
       section { padding: 4rem 1.5rem; }
       .divider { margin: 0 1.5rem; }
       .stack-grid { grid-template-columns: 1fr; }
@@ -557,42 +568,33 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-text">
+
+    <!-- Label + Title: full width -->
+    <div class="hero-top">
       <span class="hero-label">AI & Data Science · Santiago, Chile</span>
       <h1>Problema → Modelo → <em>Impacto.</em></h1>
-      <p class="hero-desc">
-        Egresado de Ingeniería Civil Industrial con mención en Ciencia de Datos.
-        Conecto el negocio con la tecnología — diseñando sistemas de IA que 
-        generan valor real para quien los opera.
-      </p>
-      <div class="hero-cta">
-        <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-        <a href="#contacto" class="btn-secondary">Conectar</a>
+    </div>
+
+    <!-- Philosophy strip: full width -->
+    <div class="hero-philosophy">
+      <p>Entender el problema antes del modelo, esa es la clave.</p>
+    </div>
+
+    <!-- Bottom: bio + CTAs (left) | profile cards (right) -->
+    <div class="hero-bottom">
+      <div class="hero-desc-block">
+        <p class="hero-desc">
+          Soy Alonso Romero egresado de Ingeniería Civil Industrial con mención en Analítica de Datos de la Universidad de los Andes en Santiago de Chile. 
+          Mi pasión es aplicar técnicas avanzadas de inteligencia artificial, especialmente aprendizaje por refuerzo profundo, para resolver problemas complejos en sistemas reales.
+          Mi enfoque se centra en la creación de modelos de IA que no solo sean técnicamente sólidos, sino que también generen un impacto tangible y medible en producción.
+        </p>
+        <div class="hero-cta">
+          <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+          <a href="#contacto" class="btn-secondary">Conectar</a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="philosophy-card">
-        <p>Entender el problema antes del modelo, esa es la clave.</p>
-      </div>
-      <div class="hero-cards-row">
-        <div class="hero-card">
-          <div class="hero-card-label">Especialidad</div>
-          <div class="hero-card-value" style="font-size:1.1rem; line-height:1.3; margin-top:0.25rem;">Deep RL &amp; Series temporales</div>
-          <div class="hero-card-desc">Sistemas de control inteligente con aprendizaje por refuerzo</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-label">Formación</div>
-          <div class="hero-card-value" style="font-size:1.1rem; line-height:1.3; margin-top:0.25rem;">Ing. Civil Industrial</div>
-          <div class="hero-card-desc">Mención en Ciencia de Datos · Chile</div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Enfoque</div>
-        <div class="hero-card-value" style="font-size:1.1rem; line-height:1.4; margin-top:0.25rem;">IA aplicada a sistemas reales</div>
-        <div class="hero-card-desc">Desde el modelado hasta el impacto medible en producción</div>
-      </div>
-    </div>
   </div>
 
   <hr class="divider"/>
@@ -606,7 +608,7 @@
 
     <div class="projects-grid">
 
-      <a href="https://github.com/alonsoromerosanchez/Hybrid-Pitch-Angle-Control-LSTMDRL-HAWT" target="_blank" class="project-card fade-in">
+      <a href="https://github.com/agromeros/wind-turbine-pitch-control" target="_blank" class="project-card fade-in">
         <div>
           <span class="project-tag">Tesis de grado · 2026</span>
           <h3 class="project-title">Control multiobjetivo del ángulo de paso en turbinas eólicas</h3>
@@ -619,19 +621,19 @@
           <div class="project-metrics">
             <div class="metric">
               <span class="metric-value">95.2%</span>
-              <span class="metric-label">Eficiencia energética 🇨🇱</span>
+              <span class="metric-label">Eficiencia energética Chile</span>
             </div>
             <div class="metric">
               <span class="metric-value">−42%</span>
-              <span class="metric-label">Fatiga mecánica 🇨🇱</span>
+              <span class="metric-label">Fatiga mecánica Chile</span>
             </div>
             <div class="metric">
               <span class="metric-value">72.2%</span>
-              <span class="metric-label">Eficiencia energética 🇨🇭</span>
+              <span class="metric-label">Eficiencia energética Suiza</span>
             </div>
             <div class="metric">
               <span class="metric-value">−59%</span>
-              <span class="metric-label">Impacto rotor 🇨🇭</span>
+              <span class="metric-label">Impacto rotor Suiza</span>
             </div>
           </div>
           <div class="project-tags-stack">
@@ -757,13 +759,4 @@
     <span class="footer-philosophy">Problema → Modelo → Impacto</span>
   </footer>
 
-    <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
