@@ -84,7 +84,7 @@
   <div class="page-header">
     <span class="page-label">Proyectos</span>
     <h1>Sistemas de IA con <em>resultados medibles.</em></h1>
-    <p>Cada proyecto parte de un problema real. Aquí están los métodos, las decisiones de diseño y los números que importan.</p>
+    <p>Cada proyecto parte de un problema real, el cual hay que entender en profundidad antes de diseñar una solución de alto impacto.</p>
   </div>
 
   <section>
@@ -101,31 +101,7 @@
           <a href="https://github.com/agromeros/Hybrid-Pitch-Angle-Control-LSTMDRL-HAWT" target="_blank" class="project-gh-link">⌥ GitHub</a>
         </div>
         <h2 class="project-title">Control multiobjetivo del ángulo de paso en turbinas eólicas</h2>
-        <p class="project-desc">Sistema híbrido LSTM + Deep Reinforcement Learning (DDPG) para el control inteligente del pitch en aerogeneradores. El núcleo del trabajo: una función de recompensa multiobjetivo que equilibra eficiencia energética, estabilidad del rotor y fatiga mecánica —objetivos que se contradicen entre sí— y que fue validada en datos reales de dos continentes.</p>
-      </div>
-
-      <!-- METRICS BAND -->
-      <div class="metrics-band">
-        <div class="metric-block">
-          <div class="metric-country">🇨🇱 Taltal, Chile</div>
-          <div class="metric-value">95.2%</div>
-          <div class="metric-label">Eficiencia energética</div>
-        </div>
-        <div class="metric-block">
-          <div class="metric-country">🇨🇱 Taltal, Chile</div>
-          <div class="metric-value">−42%</div>
-          <div class="metric-label">Fatiga mecánica (cambios de pitch)</div>
-        </div>
-        <div class="metric-block">
-          <div class="metric-country">🇨🇭 Taggenberg, Suiza</div>
-          <div class="metric-value">72.2%</div>
-          <div class="metric-label">Eficiencia energética</div>
-        </div>
-        <div class="metric-block">
-          <div class="metric-country">🇨🇭 Taggenberg, Suiza</div>
-          <div class="metric-value">−59%</div>
-          <div class="metric-label">Impacto mecánico en rotor</div>
-        </div>
+        <p class="project-desc">El control del ángulo de paso (pitch) es el mecanismo más crítico para contrarrestar las inestabilidades de potencia y las reducción de la vida útil de las turbinas. Este proyecto propone una solución: un sistema híbrido que combina predicción de viento, mediante aprendizaje profundo, con un agente de control inteligente, mediante aprendizaje por refuerzo profundo, guiado por una función de recompensa multiobjetivo.</p>
       </div>
 
       <!-- BODY -->
@@ -133,37 +109,31 @@
         <div class="project-detail-grid">
           <div class="project-detail-block">
             <div class="project-section-title">El problema</div>
-            <p>Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica. El control del ángulo de pitch —que regula cuánto viento captura la turbina— involucra objetivos que se contradicen: maximizar energía implica mayor estrés mecánico.</p>
+            <p>Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica. El control del ángulo de pitch involucra objetivos que se contradicen: maximizar energía implica mayor estrés mecánico.</p>
           </div>
           <div class="project-detail-block">
             <div class="project-section-title">La solución</div>
             <ul>
-              <li>LSTM para predecir velocidad de viento a corto plazo</li>
-              <li>DDPG (Deep Deterministic Policy Gradient) como agente de control</li>
+              <li>LSTM para predecir la velocidad de viento a corto plazo</li>
+              <li>Agente DDPG (Deep Deterministic Policy Gradient) como controlador</li>
               <li>Función de recompensa multiobjetivo con pesos calibrados</li>
-              <li>Entrenamiento con Offline RL sobre datos históricos reales</li>
-              <li>Optimización de hiperparámetros con Optuna</li>
+              <li>Entrenamiento offline sobre datos históricos reales</li>
             </ul>
           </div>
         </div>
         <div class="project-detail-grid">
           <div class="project-detail-block">
             <div class="project-section-title">Validación</div>
-            <p>El modelo fue entrenado y evaluado con datos reales de dos turbinas en contextos climáticos completamente distintos: el desierto de Atacama en Chile y los Alpes suizos. La generalización a un sitio no visto durante el entrenamiento valida la robustez del enfoque.</p>
+            <p>La estructura del modelo (LSTMDRL) fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos: el desierto de Atacama en Chile y los Alpes suizos. La arquitectura demostró robustez en condiciones de operación diversas.</p>
           </div>
           <div class="project-detail-block">
             <div class="project-section-title">Stack tecnológico</div>
             <div class="project-tags-stack">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">TensorFlow / Keras</span>
-              <span class="tech-pill">Stable-Baselines3</span>
-              <span class="tech-pill">DDPG</span>
-              <span class="tech-pill">LSTM</span>
-              <span class="tech-pill">Optuna</span>
+              <span class="tech-pill">Python / TensorFlow / Keras / Optuna / Pandas / NumPy / Matplotlib</span>
+              <span class="tech-pill">Predicción - LSTM</span>
+              <span class="tech-pill">Control - DDPG</span>
               <span class="tech-pill">k-NN Imputation</span>
               <span class="tech-pill">Offline RL</span>
-              <span class="tech-pill">Pandas / NumPy</span>
-              <span class="tech-pill">Matplotlib</span>
             </div>
           </div>
         </div>
