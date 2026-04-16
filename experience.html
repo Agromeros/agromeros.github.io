@@ -30,8 +30,8 @@
     .exp-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;margin-bottom:1rem;position:relative;}
     .exp-card.current{border-color:var(--accent);}
     .exp-card.current::before{content:'Actual';position:absolute;top:1.5rem;right:1.5rem;font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:0.2rem 0.6rem;border-radius:2px;}
-    .exp-header{display:grid;grid-template-columns:auto 1fr auto;gap:1.25rem;align-items:start;margin-bottom:1.25rem;}
-    .exp-logo{width:44px;height:44px;background:var(--accent-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:0.35rem;}
+    .exp-header{display:grid;grid-template-columns:auto 1fr auto 1fr;align-items:start;margin-bottom:1.25rem;}
+    .exp-logo{width:44px;height:44px;background:none;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:0.35rem;}
     .exp-logo img{width:100%;height:100%;object-fit:contain;display:block;}
     .exp-company{font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem;}
     .exp-role{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--text);letter-spacing:-0.01em;line-height:1.2;}
@@ -81,11 +81,11 @@
       <!-- SK CONVERGE -->
       <div class="exp-card fade-in">
         <div class="exp-header">
-          <div class="exp-logo"><img src="Images/Logos empresas/SKCONVERGE_logo.png" alt="Logo SK Converge"></div>
           <div class="exp-meta">
             <div class="exp-company">SK Converge — Sigdo Koppers</div>
             <div class="exp-role">Analista de Datos - PMO</div>
           </div>
+          <div class="exp-logo"><img src="Images/Logos empresas/SKCONVERGE_logo.png" alt="Logo SK Converge"></div>
           <div class="exp-period">Ago 2025 — Nov 2025 · 4 meses</div>
         </div>
         <ul class="exp-bullets">
