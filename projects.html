@@ -52,8 +52,12 @@
     .project-detail-block ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
     .project-detail-block ul li{font-size:0.9rem;color:var(--muted);font-weight:300;padding-left:1rem;position:relative;}
     .project-detail-block ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
-    .project-tags-stack{display:flex;flex-wrap:wrap;gap:0.5rem;}
-    .tech-pill{font-size:0.7rem;font-weight:500;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;}
+    .project-results-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+    .project-results-list li{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;padding-left:1rem;position:relative;}
+    .project-results-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
+    .project-result-image{margin-top:2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--bg);}
+    .project-result-image img{width:100%;display:block;object-fit:cover;}
+    .project-image-caption{padding:0.9rem 1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
 
     /* COMING SOON */
     .coming-soon{background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:3rem;text-align:center;color:var(--muted);}
@@ -115,34 +119,33 @@
             <p>Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica. El control del ángulo de pitch involucra objetivos que se contradicen: maximizar energía implica mayor estrés mecánico.</p>
           </div>
           <div class="project-detail-block">
-            <div class="project-section-title">La solución</div>
-            <ul>
-              <li>LSTM para predecir la velocidad de viento a corto plazo</li>
-              <li>Agente DDPG (Deep Deterministic Policy Gradient) como controlador</li>
-              <li>Función de recompensa multiobjetivo con pesos calibrados</li>
-              <li>Entrenamiento offline sobre datos históricos reales</li>
-            </ul>
+            <div class="project-detail-block">
+              <div class="project-section-title">Resultados</div>
+              <ul class="project-results-list">
+                <li>En Chile, el pronóstico LSTM tiene un R^2 de 0.927, drácticamente superior a su versión lineal</li>
+                <li>En Suiza, la predicción LSTM tiene un R^2 de 0.283, el cual es levemente superior a su versión linealmño cual sigue siendop relevante.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </li>
+                <li>Captura de energía desde el 72%, lo que sugiere que el agente no pierde potencia al ser más conservador.</li>
+                <li>Disminución del estrés mecánico del controlador desde un 23.12% hasta un 42.45%, en Suiza y Chile, respectivamente.</li>
+                <li>Estabilidad del rotor, en Suiza, altamente mejorada. mientras en Chile sólo empero un 0.02%</li>
+                <li></li>
+              </ul>
+              </div>
+            </div>
           </div>
-        </div>
         <div class="project-detail-grid">
           <div class="project-detail-block">
             <div class="project-section-title">Validación</div>
             <p>La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos: el desierto de Atacama en Chile y los Alpes suizos. El modelo demostró robustez en condiciones de operación diversas.</p>
           </div>
           <div class="project-detail-block">
-            <div class="project-section-title">Stack tecnológico</div>
-            <div class="project-tags-stack">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">TensorFlow / Keras</span>
-              <span class="tech-pill">Optuna</span>
-              <span class="tech-pill">Pandas / NumPy</span>
-              <span class="tech-pill">Matplotlib</span>
-              <span class="tech-pill">Predicción — LSTM</span>
-              <span class="tech-pill">Control — DDPG</span>
-              <span class="tech-pill">k-NN Imputation</span>
-              <span class="tech-pill">Offline RL</span>
-            </div>
-          </div>
+            <div class="project-section-title">Visualización del sistema</div>
+            <div class="project-result-image">
+              <img src="assets/images/Results/resultsLSTMDRL.png" alt="Resultados del modelo híbrido LSTMDRL">
+            <div class="project-image-caption">
+              Comparación conceptual entre el sistema híbrido LSTMDRL y su versión que observa el viento real, en escenarios de viento variable.
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </div>
