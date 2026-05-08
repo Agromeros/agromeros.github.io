@@ -55,6 +55,10 @@
     .project-results-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
     .project-results-list li{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;padding-left:1rem;position:relative;}
     .project-results-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
+    .project-result-image{margin-top:2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--bg);}
+    .project-result-image img{width:100%;display:block;object-fit:cover;}
+    .project-image-caption{padding:0.9rem 1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
+
     /* COMING SOON */
     .coming-soon{background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:3rem;text-align:center;color:var(--muted);}
     .coming-soon h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.5rem;}
@@ -112,7 +116,15 @@
         <div class="project-detail-grid">
           <div class="project-detail-block">
             <div class="project-section-title">El problema</div>
-            <p>Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica. El control del ángulo de pitch involucra objetivos que se contradicen: maximizar energía implica mayor estrés mecánico.</p>
+            <p>
+              Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica...
+            </p>
+            <div style="margin-top:2.5rem;">
+              <div class="project-section-title">Validación</div>
+              <p>
+                La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos...
+              </p>
+            </div>
           </div>
           <div class="project-detail-block">
             <div class="project-detail-block">
@@ -123,15 +135,8 @@
                 <li>Captura de energía desde el 72%, lo que sugiere que el agente no pierde potencia al ser más conservador.</li>
                 <li>Disminución del estrés mecánico del controlador desde un 23.12% hasta un 42.45%, en Suiza y Chile, respectivamente.</li>
                 <li>Estabilidad del rotor, en Suiza, altamente mejorada. mientras en Chile sólo empero un 0.02%</li>
-                <li></li>
               </ul>
               </div>
-            </div>
-          </div>
-        <div class="project-detail-grid">
-          <div class="project-detail-block">
-            <div class="project-section-title">Validación</div>
-            <p>La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos: el desierto de Atacama en Chile y los Alpes suizos. El modelo demostró robustez en condiciones de operación diversas.</p>
             </div>
           </div>
         </div>
