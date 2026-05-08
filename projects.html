@@ -117,12 +117,12 @@
           <div class="project-detail-block">
             <div class="project-section-title">El problema</div>
             <p>
-              Los controladores PID tradicionales de turbinas eólicas no pueden optimizar simultáneamente eficiencia energética, estabilidad y vida útil mecánica...
+              La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales de turbinas eólicas suponen linealidad y no consideran la incertidumbre de los factores dinámicos.
             </p>
             <div style="margin-top:2.5rem;">
               <div class="project-section-title">Validación</div>
               <p>
-                La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos...
+                La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos como Chile y Suiza, con el fin de validad la transferibilidad de la arquitectura del modelo a diferentes condiciones de viento. El modelo propuesto se comparó contra su versión perfecta (viento real), utilizando métricas de captura de energía, estrés mecánico y estabilidad del rotor.
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@
               <div class="project-section-title">Resultados</div>
               <ul class="project-results-list">
                 <li>En Chile, el pronóstico LSTM tiene un R^2 de 0.927, drácticamente superior a su versión lineal</li>
-                <li>En Suiza, la predicción LSTM tiene un R^2 de 0.283, el cual es levemente superior a su versión linealmño cual sigue siendop relevante.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </li>
+                <li>En Suiza, la predicción LSTM tiene un R^2 de 0.283, el cual es levemente superior a su versión linealmño cual sigue siendo relevante.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </li>
                 <li>Captura de energía desde el 72%, lo que sugiere que el agente no pierde potencia al ser más conservador.</li>
                 <li>Disminución del estrés mecánico del controlador desde un 23.12% hasta un 42.45%, en Suiza y Chile, respectivamente.</li>
                 <li>Estabilidad del rotor, en Suiza, altamente mejorada. mientras en Chile sólo empero un 0.02%</li>
