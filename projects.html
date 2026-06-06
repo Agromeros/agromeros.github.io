@@ -68,7 +68,7 @@
     .project-result-image{margin-top:2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--bg);}
     .project-result-image img{width:100%;display:block;object-fit:cover;}
     .project-image-caption{padding:0.9rem 1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
-
+    .country-chip{margin-right:0.4rem;}
     /* COMING SOON */
     .coming-soon{background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:3rem;text-align:center;color:var(--muted);}
     .coming-soon h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.5rem;}
@@ -140,6 +140,7 @@
           </div>
       
           <div class="project-model-text">
+            La arquitectura propuesta combina una red LSTM para anticipar la velocidad futura del viento y un agente Deep Reinforcement Learning (DDPG) para ajustar dinámicamente el ángulo de pitch.
             <br><br>
             El sistema incorpora una función de recompensa multiobjetivo que busca equilibrar captura energética, estabilidad operacional y reducción del desgaste mecánico en tiempo real.
           </div>
@@ -151,7 +152,8 @@
         <div class="results-grid">
       
           <div class="result-card">
-            <h4>🇨🇱 Caso Chile 🇨🇱</h4>
+            <span class="country-chip">🇨🇱</span>
+            <h4>Caso Chile</h4>
       
             <ul>
               <li>⚡ Captura un <strong>20%</strong> más potencia que la observada en el escenario real.</li>
@@ -165,7 +167,8 @@
           </div>
       
           <div class="result-card">
-            <h4>🇨🇭 Caso Suiza 🇨🇭</h4>
+            <span class="country-chip">🇨🇭</span>
+            <h4>Caso Suiza</h4>
       
             <ul>
               <li>⚡ Captura el <strong>97%</strong> de la potencia observada en el escenario real.</li>
