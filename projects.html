@@ -68,7 +68,6 @@
     .project-result-image{margin-top:2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--bg);}
     .project-result-image img{width:100%;display:block;object-fit:cover;}
     .project-image-caption{padding:0.9rem 1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
-    .country-chip{margin-right:0.4rem;}
     /* COMING SOON */
     .coming-soon{background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:3rem;text-align:center;color:var(--muted);}
     .coming-soon h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.5rem;}
@@ -120,7 +119,6 @@
           <a href="https://github.com/agromeros/Hybrid-Pitch-Angle-Control-LSTMDRL-HAWT" target="_blank" class="project-gh-link">⌥ GitHub</a>
         </div>
         <h2 class="project-title">Modelo multiobjetivo del ángulo de paso en turbinas eólicas mediante un modelo híbrido de predicción y optimización</h2>
-        <p class="project-desc">El control del ángulo de paso (pitch control) es el mecanismo que tiene más impacto para contrarrestar las inestabilidades de potencia y la reducción de la vida útil de las turbinas. Este proyecto propone una solución: un sistema híbrido que combina predicción de viento, mediante aprendizaje profundo, con un agente de control inteligente, mediante aprendizaje por refuerzo profundo, guiado por una función de recompensa multiobjetivo.</p>
       </div>
 
       <div class="project-full-body">
@@ -131,7 +129,7 @@
           La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales reaccionan al viento observado y suelen asumir comportamientos lineales. Esto limita su capacidad para operar bajo incertidumbre y equilibrar simultáneamente captura energética, estabilidad del rotor y desgaste mecánico.
         </p>
       
-        <div class="project-section-title">Modelo</div>
+        <div class="project-section-title">Modelo y Solución</div>
       
         <div class="project-model">
       
@@ -140,7 +138,8 @@
           </div>
       
           <div class="project-model-text">
-            La arquitectura propuesta combina una red LSTM para anticipar la velocidad futura del viento y un agente Deep Reinforcement Learning (DDPG) para ajustar dinámicamente el ángulo de pitch.
+            El control del ángulo de paso (pitch control) es el mecanismo que tiene más impacto para contrarrestar las inestabilidades de potencia y de vida útil.
+            Este proyecto propone una solución que combina una red LSTM para anticipar la velocidad futura del viento y un agente DDPG para ajustar dinámicamente el ángulo de pitch.
             <br><br>
             El sistema incorpora una función de recompensa multiobjetivo que busca equilibrar captura energética, estabilidad operacional y reducción del desgaste mecánico en tiempo real.
           </div>
@@ -152,7 +151,6 @@
         <div class="results-grid">
       
           <div class="result-card">
-            <span class="country-chip">🇨🇱</span>
             <h4>Caso Chile</h4>
       
             <ul>
@@ -167,7 +165,6 @@
           </div>
       
           <div class="result-card">
-            <span class="country-chip">🇨🇭</span>
             <h4>Caso Suiza</h4>
       
             <ul>
