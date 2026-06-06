@@ -129,7 +129,7 @@
           La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales reaccionan al viento observado y suelen asumir comportamientos lineales. Esto limita su capacidad para operar bajo incertidumbre y equilibrar simultáneamente captura energética, estabilidad del rotor y desgaste mecánico.
         </p>
       
-        <div class="project-section-title">Modelo y Solución</div>
+        <div class="project-section-title">Modelo</div>
       
         <div class="project-model">
       
@@ -138,10 +138,7 @@
           </div>
       
           <div class="project-model-text">
-            El control del ángulo de paso (pitch control) es el mecanismo que tiene más impacto para contrarrestar las inestabilidades de potencia y de vida útil.
-            Este proyecto propone una solución que combina una red LSTM para anticipar la velocidad futura del viento y un agente DDPG para ajustar dinámicamente el ángulo de pitch.
-            <br><br>
-            El sistema incorpora una función de recompensa multiobjetivo que busca equilibrar captura energética, estabilidad operacional y reducción del desgaste mecánico en tiempo real.
+            Arquitectura híbrida que combina una red LSTM para anticipar la velocidad del viento y un agente DDPG para ajustar dinámicamente el ángulo de pitch con una función de recompensa multiobjetivo que busca equilibrar la captura energética, la estabilidad operacional y el desgaste mecánico.
           </div>
       
         </div>
@@ -149,6 +146,7 @@
         <div class="project-section-title">Resultados</div>
       
         <div class="results-grid">
+          El modelo híbrido demostró que es posible anticipar el comportamiento del viento y mejorar significativamente la estabilidad operacional sin sacrificar de forma relevante la captura energética.
       
           <div class="result-card">
             <h4>Caso Chile</h4>
