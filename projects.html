@@ -46,7 +46,17 @@
 
     /* PROJECT BODY */
     .project-full-body{padding:2.5rem;}
-    .project-section-title{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+    .project-section-title{ font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border);}
+    .project-model{ display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:center; margin-bottom:2.5rem;}
+    .project-model-image{ border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--white);}
+    .project-model-image img{ width:100%; display:block;}
+    .project-model-text{ font-size:0.9rem; color:var(--muted); line-height:1.7;}
+    .results-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .result-card{ border:1px solid var(--border); border-radius:4px; padding:1.5rem; background:var(--bg);}
+    .result-card h4{ font-family:'DM Serif Display',serif; font-size:1.2rem; margin-bottom:1rem; color:var(--text); }
+    .result-card ul{ list-style:none; display:flex; flex-direction:column; gap:0.9rem;}
+    .result-card li{ font-size:0.9rem; color:var(--text); line-height:1.5;}
+    .result-card strong{ color:var(--accent);}
     .project-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
     .project-detail-block p{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;}
     .project-detail-block ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
@@ -110,47 +120,75 @@
           <a href="https://github.com/agromeros/Hybrid-Pitch-Angle-Control-LSTMDRL-HAWT" target="_blank" class="project-gh-link">⌥ GitHub</a>
         </div>
         <h2 class="project-title">Modelo multiobjetivo del ángulo de paso en turbinas eólicas mediante un modelo híbrido de predicción y optimización</h2>
-        <p class="project-desc">El control del ángulo de paso (pitch) es el mecanismo más crítico para contrarrestar las inestabilidades de potencia y la reducción de la vida útil de las turbinas. Este proyecto propone una solución: un sistema híbrido que combina predicción de viento, mediante aprendizaje profundo, con un agente de control inteligente, mediante aprendizaje por refuerzo profundo, guiado por una función de recompensa multiobjetivo.</p>
+        <p class="project-desc">El control del ángulo de paso (pitch control) es el mecanismo que tiene más impacto para contrarrestar las inestabilidades de potencia y la reducción de la vida útil de las turbinas. Este proyecto propone una solución: un sistema híbrido que combina predicción de viento, mediante aprendizaje profundo, con un agente de control inteligente, mediante aprendizaje por refuerzo profundo, guiado por una función de recompensa multiobjetivo.</p>
       </div>
 
       <div class="project-full-body">
-        <div class="project-detail-grid">
-          <div class="project-detail-block">
-            <div class="project-section-title">El problema</div>
-            <p>
-              La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales de turbinas eólicas suponen linealidad y no consideran la incertidumbre de los factores dinámicos.
-            </p>
-            <div style="margin-top:2.5rem;">
-              <div class="project-section-title">Validación</div>
-              <p>
-                La arquitectura LSTMDRL fue entrenada y evaluada con datos de dos turbinas en contextos climáticos completamente distintos como Chile y Suiza, con el fin de validad la transferibilidad de la arquitectura del modelo a diferentes condiciones de viento. El modelo propuesto se comparó contra su versión perfecta (viento real), utilizando métricas de captura de energía, estrés mecánico y estabilidad del rotor.
-              </p>
-            </div>
+
+        <div class="project-section-title">Problema</div>
+      
+        <p class="project-desc" style="margin-bottom:2.5rem;max-width:none;">
+          La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales reaccionan al viento observado y suelen asumir comportamientos lineales. Esto limita su capacidad para operar bajo incertidumbre y equilibrar simultáneamente captura energética, estabilidad del rotor y desgaste mecánico.
+        </p>
+      
+        <div class="project-section-title">Modelo</div>
+      
+        <div class="project-model">
+      
+          <div class="project-model-image">
+            <img src="assets/images/Projects/arquitectura_tesis.png" alt="Arquitectura híbrida LSTM-DRL">
           </div>
-          <div class="project-detail-block">
-            <div class="project-detail-block">
-              <div class="project-section-title">Resultados</div>
-              <ul class="project-results-list">
-                <li>En Chile, el pronóstico LSTM tiene un R^2 de 0.927, drácticamente superior a su versión lineal</li>
-                <li>En Suiza, la predicción LSTM tiene un R^2 de 0.283, el cual es levemente superior a su versión linealño cual sigue siendo relevante.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </li>
-                <li>Captura de energía desde el 72%, lo que sugiere que el agente no pierde potencia al ser más conservador.</li>
-                <li>Disminución del estrés mecánico del controlador desde un 23.12% hasta un 42.45%, en Suiza y Chile, respectivamente.</li>
-                <li>Estabilidad del rotor, en Suiza, altamente mejorada. mientras en Chile sólo empero un 0.02%</li>
-              </ul>
-              </div>
-            </div>
+      
+          <div class="project-model-text">
+            La arquitectura propuesta combina una red LSTM para anticipar la velocidad del viento y un agente DDPG en el paradigma de Deep Reinforcement Learning para ajustar dinámicamente el ángulo de paso.
+            <br><br>
+            El sistema incorpora una función de recompensa multiobjetivo que busca equilibrar captura energética, estabilidad operacional y reducción del desgaste mecánico en tiempo real.
+          </div>
+      
+        </div>
+      
+        <div class="project-section-title">Resultados</div>
+      
+        <div class="results-grid">
+      
+          <div class="result-card">
+            <h4>🇨🇱 Caso Chile 🇨🇱</h4>
+      
+            <ul>
+              <li>⚡ Captura un <strong>20%</strong> más potencia que la observada en el escenario real.</li>
+      
+              <li>🔄 Reduce un <strong>49%</strong> la variabilidad de la velocidad del rotor.</li>
+      
+              <li>🎯 Reduce un <strong>93%</strong> el movimiento del controlador de paso (pitch controller).</li>
+      
+              <li>📈 Alcanzó una eficiencia de <strong>806.635</strong>, superando tanto los datos reales como el modelo con acceso al viento real.</li>
+            </ul>
+          </div>
+      
+          <div class="result-card">
+            <h4>🇨🇭 Caso Suiza 🇨🇭</h4>
+      
+            <ul>
+              <li>⚡ Captura el <strong>97%</strong> de la potencia observada en el escenario real.</li>
+      
+              <li>🔄 Reduce un <strong>72%</strong> la variabilidad de la velocidad del rotor.</li>
+      
+              <li>🎯 Reduce un <strong>90%</strong> el movimiento del controlador de paso (pitch controller).</li>
+      
+              <li>📈 Alcanzó una eficiencia de <strong>0.356</strong>, superando los datos reales y el modelo que ve el viento real.</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
     <!-- COMING SOON -->
-     <!--
+    <!--
     <div style="background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:2rem;">
         <span class="project-tag" style="margin-bottom:1rem;display:inline-block;">En desarrollo</span>
         <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.3;">Optimización de portafolio de inversión</h3>
         <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;">Aplicación de técnicas de optimización y aprendizaje por refuerzo para la construcción y gestión dinámica de portafolios financieros.</p>
     </div>
-     <div style="background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:2rem;">
+    <div style="background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:2rem;">
         <span class="project-tag" style="margin-bottom:1rem;display:inline-block;">En desarrollo</span>
         <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.3;">Sistema de Videovigilancia para Línea Base Ambiental de Tránsito de Fauna</h3>
         <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;">Aplicación de técnicas de visión por computadora para el monitoreo y análisis del comportamiento de fauna en zonas de posíble transito en las cuales se quiere realiza run proyecto de ingeniería.</p>
