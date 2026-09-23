@@ -3,134 +3,166 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alonso Romero — AI & Data Science</title>
+  <title>Alonso Romero — Ingeniero de IA & Data Scientist en Chile</title>
+  <meta name="description" content="Ingeniero Civil Industrial con mención en Ciencia de Datos (Universidad de los Andes). Diseño modelos de predicción y control con aprendizaje por refuerzo aplicados a energía e industria, con resultados medibles. Disponible para roles de AI/ML Engineer o Data Scientist."/>
+  <meta name="keywords" content="Alonso Romero, ingeniero de IA, data scientist Chile, machine learning, deep reinforcement learning, ciencia de datos, control de turbinas eólicas, Universidad de los Andes"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Alonso Romero Sánchez"/>
+  <link rel="canonical" href="https://agromeros.github.io/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Alonso Romero — Ingeniero de IA & Data Scientist"/>
+  <meta property="og:description" content="Sistemas de predicción y control aplicados a energía e industria, con resultados medibles. Ingeniero Civil Industrial, mención en Ciencia de Datos."/>
+  <meta property="og:url" content="https://agromeros.github.io/"/>
+  <meta property="og:locale" content="es_CL"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Alonso Romero — Ingeniero de IA & Data Scientist"/>
+  <meta name="twitter:description" content="Sistemas de predicción y control aplicados a energía e industria, con resultados medibles."/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alonso Romero Sánchez",
+    "url": "https://agromeros.github.io/",
+    "jobTitle": "Ingeniero de IA & Data Scientist",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad de los Andes, Chile"
+    },
+    "email": "mailto:agromero@miuandes.cl",
+    "sameAs": [
+      "https://www.linkedin.com/in/alonsoromerosanchez",
+      "https://github.com/agromeros"
+    ]
+  }
+  </script>
   <style>
     :root { --bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF; }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
     .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
-    .nav-links{display:flex;gap:2.5rem;list-style:none;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-right{display:flex;align-items:center;gap:2.5rem;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.9rem;transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
-    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 4rem;max-width:1200px;margin:0 auto;}
-    .hero-top{animation:fadeUp 0.8s ease both;margin-bottom:2rem;}
-    .hero-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
-    .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5.2vw,5rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);white-space:nowrap;}
-    .hero h1 em{font-style:italic;color:var(--accent);}
-    .hero-philosophy{animation:fadeUp 0.8s ease 0.15s both;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.25rem 0;margin-bottom:2.5rem;}
-    .hero-philosophy p{font-family:'DM Serif Display',serif;font-size:clamp(1rem,1.5vw,1.2rem);font-style:italic;color:var(--accent);}
-    .hero-bottom{animation:fadeUp 0.8s ease 0.3s both;display:flex;flex-direction:column;gap:2rem;}
-    .hero-desc{font-size:1.05rem;color:var(--muted);margin-bottom:2rem;font-weight:300;line-height:1.7;}
-    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
-    .btn-primary{display:inline-block;padding:0.85rem 2rem;background:var(--accent);color:var(--white);text-decoration:none;font-size:0.875rem;font-weight:500;letter-spacing:0.02em;border-radius:2px;transition:opacity 0.2s,transform 0.2s;}
+    .nav-cta{display:inline-block;padding:0.55rem 1.35rem;background:var(--accent);color:var(--white)!important;text-decoration:none;font-size:0.85rem;font-weight:500;border-radius:2px;transition:opacity 0.2s;}
+    .nav-cta:hover{opacity:0.88;}
+
+    .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 4rem;max-width:1080px;margin:0 auto;}
+    .hero-kicker{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--accent);margin-bottom:1.25rem;animation:fadeUp 0.8s ease both;}
+    .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.18;letter-spacing:-0.02em;color:var(--text);max-width:820px;margin-bottom:1.75rem;animation:fadeUp 0.8s ease 0.1s both;}
+    .hero-desc{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.75;max-width:640px;margin-bottom:2rem;animation:fadeUp 0.8s ease 0.2s both;}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;animation:fadeUp 0.8s ease 0.3s both;}
+    .btn-primary{display:inline-block;padding:0.85rem 2rem;background:var(--accent);color:var(--white);text-decoration:none;font-size:0.9rem;font-weight:500;letter-spacing:0.01em;border-radius:2px;transition:opacity 0.2s,transform 0.2s;}
     .btn-primary:hover{opacity:0.88;transform:translateY(-1px);}
-    .btn-secondary{display:inline-block;padding:0.85rem 2rem;background:transparent;color:var(--text);text-decoration:none;font-size:0.875rem;font-weight:500;letter-spacing:0.02em;border:1px solid var(--border);border-radius:2px;transition:border-color 0.2s,transform 0.2s;}
+    .btn-secondary{display:inline-block;padding:0.85rem 2rem;background:transparent;color:var(--text);text-decoration:none;font-size:0.9rem;font-weight:500;letter-spacing:0.01em;border:1px solid var(--border);border-radius:2px;transition:border-color 0.2s,transform 0.2s;}
     .btn-secondary:hover{border-color:var(--accent);transform:translateY(-1px);}
-    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
-    .hero-card{background:var(--white);padding:1.25rem;}
-    .hero-card-label{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
-    .hero-card-value{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--accent);line-height:1.25;}
-    .hero-card-desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;line-height:1.4;}
-    section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
-    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
-    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
-    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;animation:fadeUp 0.8s ease 0.4s both;}
+    .hero-card{background:var(--white);padding:1.5rem 1.5rem 1.6rem;}
+    .hero-card-value{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);line-height:1.25;margin-bottom:0.6rem;}
+    .hero-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.5;}
+
+    section{max-width:1080px;margin:0 auto;padding:5rem 4rem;}
+    .section-header{margin-bottom:2.5rem;}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:0.6rem;}
+    .section-sub{color:var(--muted);font-weight:300;font-size:0.95rem;max-width:560px;}
     .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
+
     .projects-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
     .project-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;transition:border-color 0.2s,transform 0.2s;text-decoration:none;color:inherit;}
     .project-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-    .project-tag{display:inline-block;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:0.75rem;}
-    .project-title{font-family:'DM Serif Display',serif;font-size:1.4rem;letter-spacing:-0.02em;margin-bottom:0.5rem;line-height:1.2;}
+    .project-tag{display:inline-block;font-size:0.7rem;font-weight:500;color:var(--accent);background:var(--accent-light);padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:0.75rem;}
+    .project-title{font-family:'DM Serif Display',serif;font-size:1.4rem;letter-spacing:-0.02em;margin-bottom:0.5rem;line-height:1.25;}
     .project-desc{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:1rem;}
     .project-tags-stack{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem;}
     .tech-pill{font-size:0.7rem;font-weight:500;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;}
     .project-arrow{font-size:1.5rem;color:var(--border);transition:color 0.2s,transform 0.2s;margin-top:0.25rem;}
     .project-card:hover .project-arrow{color:var(--accent);transform:translate(3px,-3px);}
-    .section-cta{margin-top:2.5rem;}
+    .section-cta{margin-top:2rem;}
+    .text-link{color:var(--accent);text-decoration:none;font-size:0.9rem;font-weight:500;border-bottom:1px solid var(--accent);padding-bottom:0.1rem;}
+    .text-link:hover{opacity:0.75;}
+
     .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-    .contact-text h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem;}
-    .contact-text h2 em{font-style:italic;color:var(--accent);}
+    .contact-text h2{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-0.02em;line-height:1.25;margin-bottom:1rem;}
     .contact-text p{color:var(--muted);font-weight:300;font-size:1rem;line-height:1.7;margin-bottom:2rem;}
     .contact-links{display:flex;flex-direction:column;gap:1rem;}
     .contact-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--text);font-size:0.9rem;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--border);border-radius:4px;transition:border-color 0.2s,transform 0.2s;}
     .contact-link:hover{border-color:var(--accent);transform:translateX(4px);}
     .contact-link-icon{width:36px;height:36px;background:var(--accent-light);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-    .contact-link-label{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .contact-link-label{font-size:0.7rem;font-weight:500;color:var(--muted);}
     .contact-link-value{font-weight:500;font-size:0.9rem;}
-    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;}
     footer p{font-size:0.8rem;color:var(--muted);}
     .footer-philosophy{font-family:'DM Serif Display',serif;font-style:italic;font-size:0.85rem;color:var(--accent);}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;}
     .fade-in.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.hero{padding:6rem 1.5rem 3rem;}.hero h1{white-space:normal;font-size:clamp(2.2rem,8vw,3.5rem);}.hero-cards{grid-template-columns:1fr;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.contact-inner{grid-template-columns:1fr;gap:2rem;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.hero{padding:6rem 1.5rem 3rem;}.hero-cards{grid-template-columns:1fr;}section{padding:3.5rem 1.5rem;}.divider{margin:0 1.5rem;}.contact-inner{grid-template-columns:1fr;gap:2rem;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
   </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-logo">Alonso Romero</a>
-    <ul class="nav-links">
-      <li><a href="about.html">Sobre mí</a></li>
-      <li><a href="projects.html">Proyectos</a></li>
-      <li><a href="experience.html">Experiencia</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="experience.html">Experiencia</a></li>
+      </ul>
+      <a href="mailto:agromero@miuandes.cl" class="nav-cta">Contactar</a>
+    </div>
   </nav>
 
-  <div class="hero">
-    <div class="hero-top">
-      <span class="hero-label">AI & Data Science · Chile</span>
-      <h1>Problema → Modelo → <em>Impacto.</em></h1>
+  <header class="hero">
+    <p class="hero-kicker">Problema → Modelo → Impacto</p>
+    <h1>Entendiendo el problema antes de aplicar el modelo.</h1>
+    <p class="hero-desc">Soy Alonso Romero, egresado de Ingeniería Civil Industrial con mención en Ciencia de Datos de la Universidad de los Andes. Busco diseñar modelos de IA y analítica avanzada para resolver problemas complejos en sistemas reales relacionados con predicción, clasificación, detección y toma de decisiones. Además, me motiva conectar el negocio con la tecnología adecuada según las necesidades de las empresas ya que el problema importa tanto como la solución.</p>
+    <div class="hero-cta">
+      <a href="mailto:agromero@miuandes.cl" class="btn-primary">Conversemos</a>
+      <a href="projects.html" class="btn-secondary">Ver proyectos</a>
     </div>
-    <div class="hero-philosophy">
-      <p>Entendiendo el problema antes de aplicar el modelo.</p>
-    </div>
-    <div class="hero-bottom">
-      <div>
-        <p class="hero-desc"> Soy Alonso Romero, egresado de Ingeniería Civil Industrial con mención en Ciencia de Datos de la Universidad de los Andes.<br>Busco diseñar modelos de IA y analítica avanzada para resolver problemas complejos en sistemas reales relacionados con predicción, clasificación, detección y toma de decisiones.<br>Además, me motiva conectar el negocio con la tecnología adecuada según las necesidades de las empresas ya que el problema importa tanto como la solución.</p>
-        <div class="hero-cta">
-          <a href="about.html" class="btn-secondary">Sobre mí</a>
-          <a href="#contacto" class="btn-secondary">Conectar</a>
-          <a href="projects.html" class="btn-primary">Ver proyectos</a>
-        </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-value">Modelado IA y estadística avanzada</div>
+        <div class="hero-card-desc">Desarrollo de modelos de machine learning, deep learning y reinforcement learning para predecir, clasificar, detectar y controlar. Enfoque frecuentista y bayesiano.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-value">Análisis y visualización de datos</div>
+        <div class="hero-card-desc">Pipeline de datos (ETL & ELT), análisis descriptivo, predictivo y prescriptivo. Inferencia estadística. Visualización de datos</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-value">Gestión de proyectos</div>
+        <div class="hero-card-desc">Planificación, ejecución y control de proyectos, aplicando metodologías ágiles (Scrum, Kanban) y tradicionales (Waterfall). </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <hr class="divider"/>
 
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">01</span>
-      <h2 class="section-title">Proyectos destacados</h2>
+      <h2 class="section-title">Proyecto destacado</h2>
+      <p class="section-sub">El más completo hasta ahora: predicción, control y una función de recompensa multiobjetivo, probada en dos escenarios reales.</p>
     </div>
     <div class="projects-grid">
       <a href="projects.html" class="project-card fade-in">
         <div>
           <span class="project-tag">Tesis de grado · 2026</span>
           <h3 class="project-title">Control multiobjetivo del ángulo de paso en turbinas eólicas mediante un modelo híbrido de predicción y optimización.</h3>
-          <p class="project-desc">El control del ángulo de paso (pitch) es el mecanismo más crítico para contrarrestar las inestabilidades de potencia y las reducción de la vida útil de las turbinas. Este proyecto propone una solución: un sistema híbrido que combina predicción de viento, mediante aprendizaje profundo, con un agente de control inteligente, mediante aprendizaje por refuerzo profundo, guiado por una función de recompensa multiobjetivo.</p>
+          <p class="project-desc">El ángulo de paso (pitch) es el mecanismo más crítico para contrarrestar inestabilidades de potencia y desgaste en una turbina. Construí un sistema híbrido: una red LSTM anticipa el viento y un agente DDPG ajusta el pitch en tiempo real, equilibrando generación, estabilidad y vida útil del equipo.</p>
           <div class="project-tags-stack">
-            <span class="tech-pill">Python</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">Predicción</span><span class="tech-pill">Control</span><span class="tech-pill">Optimización</span><span class="tech-pill">LSTM</span><span class="tech-pill">DDPG</span><span class="tech-pill">Offline RL</span>
+            <span class="tech-pill">Python</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">LSTM</span><span class="tech-pill">DDPG</span><span class="tech-pill">Control</span><span class="tech-pill">Optimización</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
-      <div class="project-card fade-in" style="opacity:0.55;cursor:default;pointer-events:none;">
-        <div>
-          <span class="project-tag">Próximamente</span>
-          <h3 class="project-title">Más proyectos en desarrollo</h3>
-          <p class="project-desc">Nuevos proyectos en análisis de datos, modelos predictivos e IA aplicada serán publicados próximamente.</p>
-        </div>
-        <div class="project-arrow">—</div>
-      </div>
     </div>
     <div class="section-cta fade-in">
-      <a href="projects.html" class="btn-secondary">Ver todos los proyectos →</a>
+      <a href="projects.html" class="text-link">Ver todos los proyectos</a>
     </div>
   </section>
 
@@ -139,8 +171,8 @@
   <section id="contacto">
     <div class="contact-inner">
       <div class="contact-text fade-in">
-        <h2>¿Construyamos algo con <em>impacto real?</em></h2>
-        <p>Busco oportunidades como Junior AI/ML Engineer, Data Scientist o Analista de Datos. También estoy abierto a conversar con personas que quieran colaborar en proyectos donde los datos y la estrategia se encuentren.</p>
+        <h2>¿Tienes un problema que se resolvería mejor con datos?</h2>
+        <p>Busco oportunidades como Junior AI/ML Engineer, Data Scientist o Analista de Datos. Si tu equipo necesita modelar algo bajo incertidumbre —o simplemente quieres una segunda mirada técnica sobre un proyecto— escríbeme.</p>
         <a href="mailto:agromero@miuandes.cl" class="btn-primary">Escríbeme</a>
       </div>
       <div class="contact-links fade-in">
