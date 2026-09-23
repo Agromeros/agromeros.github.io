@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre mí — Alonso Romero</title>
+  <title>Sobre mí — Alonso Romero, Ingeniero de IA & Data Scientist</title>
+  <meta name="description" content="Ingeniero Civil Industrial con mención en Ciencia de Datos (Universidad de los Andes). Trayectoria en transformación digital, innovación y gestión ágil, hoy aplicada a sistemas de IA."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://agromeros.github.io/about.html"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root{--bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF;}
@@ -12,27 +15,30 @@
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
     .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
-    .nav-links{display:flex;gap:2.5rem;list-style:none;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-right{display:flex;align-items:center;gap:2.5rem;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.9rem;transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-cta{display:inline-block;padding:0.55rem 1.35rem;background:var(--accent);color:var(--white)!important;text-decoration:none;font-size:0.85rem;font-weight:500;border-radius:2px;transition:opacity 0.2s;}
+    .nav-cta:hover{opacity:0.88;}
 
     /* PAGE HEADER */
     .page-header{padding:10rem 4rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
-    .page-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
-    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);margin-bottom:1rem;}
-    .page-header h1 em{font-style:italic;color:var(--accent);}
+    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;max-width:760px;}
     .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:680px;}
 
     section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
-    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
-    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
-    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .section-header{margin-bottom:2.5rem;}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-0.02em;color:var(--text);}
     .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
 
     /* BIO GRID */
-    .bio-grid{display:grid;grid-template-columns:2fr 1fr;gap:5rem;align-items:start;}
+    .bio-grid{display:grid;grid-template-columns:2fr 1fr;gap:5rem;align-items:center;}
     .bio-text p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1.25rem;}
     .bio-text p:last-child{margin-bottom:0;}
+    .bio-photo-wrap{justify-self:center;align-self:center;}
+    .bio-photo{width:260px;height:260px;border-radius:50%;overflow:hidden;background:var(--white);border:2px solid var(--border);box-shadow:0 0 0 8px var(--accent-light);}
+    .bio-photo img{width:100%;height:100%;object-fit:cover;display:block;}
     .bio-sidebar{display:flex;flex-direction:column;gap:1.5rem;}
     .bio-stat{border-left:2px solid var(--accent);padding-left:1rem;}
     .bio-stat-label{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;}
@@ -79,31 +85,30 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-in.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.bio-grid{grid-template-columns:1fr;gap:3rem;}.skills-grid{grid-template-columns:1fr;}.courses-grid{grid-template-columns:1fr;}.lang-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.bio-grid{grid-template-columns:1fr;gap:2rem;}.bio-photo-wrap{order:-1;}.bio-photo{width:180px;height:180px;}.skills-grid{grid-template-columns:1fr;}.courses-grid{grid-template-columns:1fr;}.lang-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
   </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-logo">Alonso Romero</a>
-    <ul class="nav-links">
-      <li><a href="about.html" class="active">Sobre mí</a></li>
-      <li><a href="projects.html">Proyectos</a></li>
-      <li><a href="experience.html">Experiencia</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html" class="active">Sobre mí</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="experience.html">Experiencia</a></li>
+      </ul>
+      <a href="mailto:agromero@miuandes.cl" class="nav-cta">Contactar</a>
+    </div>
   </nav>
 
   <div class="page-header">
-    <span class="page-label">Sobre mí</span>
-    <h1>Ingeniero que piensa en <em>sistemas.</em></h1>
-    <p>Combino los datos con visión de negocio para diseñar soluciones de IA que funcionan en el mundo real.</p>
+    <h1>Combino los datos con visión de negocio para diseñar soluciones de IA que funcionan en el mundo real, no solo en el escritorio.</h1>
   </div>
 
   <!-- BIO -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">01</span>
       <h2 class="section-title">¿Quién soy?</h2>
     </div>
     <div class="bio-grid fade-in">
@@ -111,7 +116,12 @@
         <p>Soy Alonso Romero, Ingeniero Civil Industrial con mención en Ciencia de Datos de la Universidad de los Andes en Santiago de Chile.</p>
         <p>Me interesa construir soluciones de IA aplicadas a problemas reales. Busco transformar datos en decisiones que generan impacto real.</p>
         <p>He tenido la oportunidad de comenzar mi vida laboral en distintos contextos: desde la transformación digital a escala de holding hasta el análisis de innovación con impacto social y privado y la gestión de proyectos ágiles.</p>
-        <p>Me motiva aplicar la inteligencia artificial, el análisis de datos y la optimización de procesos en problemas y situaciones reales para aportar a un futuro más tecnológico, sostenible y humano.</p>
+        <p>Busco oportunidades como ML Engineer, Data Scientist o Analista de Datos, y siempre estoy abierto a conversar con personas que quieran construir algo con impacto real.</p>
+      </div>
+      <div class="bio-photo-wrap">
+        <div class="bio-photo">
+          <img src="Images/about/perfil.jpg" alt="Alonso Romero"/>
+        </div>
       </div>
     </div>
   </section>
@@ -121,7 +131,6 @@
   <!-- EDUCACIÓN -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">02</span>
       <h2 class="section-title">Educación</h2>
     </div>
     <div class="fade-in">
@@ -143,12 +152,11 @@
   <!-- SKILLS -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">03</span>
       <h2 class="section-title">Stack técnico</h2>
     </div>
     <div class="skills-grid fade-in">
       <div class="skill-category">
-        <div class="skill-category-title"> IA &amp; Modelado</div>
+        <div class="skill-category-title">🤖 IA &amp; Modelado</div>
         <div class="skill-items">
           <p>Diseño modelos y sistemas inteligentes en entornos reales que equilibran múltiples objetivos y restricciones.</p>
           <span class="skill-item">Machine Learning</span>
@@ -167,7 +175,7 @@
         </div>
       </div>
       <div class="skill-category">
-        <div class="skill-category-title">Datos</div>
+        <div class="skill-category-title">📊 Datos</div>
         <div class="skill-items">
           <p> Transformo datos en información útil para apoyar decisiones.</p>
           <span class="skill-item">Extracción, Transformación y Carga de Datos</span>
@@ -187,7 +195,7 @@
         </div>
       </div>
       <div class="skill-category">
-        <div class="skill-category-title">Negocio &amp; Gestión</div>
+        <div class="skill-category-title">💡 Negocio &amp; Gestión</div>
         <div class="skill-items">
           <p> Coordino iniciativas de innovación y metodologías ágiles.</p>
           <span class="skill-item">Agile Scrum, Kanban</span>
@@ -196,6 +204,7 @@
           <span class="skill-item">Análisis estratégico</span>
           <span class="skill-item">Modelos de negocios</span>
           <span class="skill-item">Transformación digital</span>
+          <span class="skill-item">CPMAI, CRISP-DM, MLops</span>
           <div class="skill-badges">
             <img src="https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=fff&style=for-the-badge" alt="Jira"/>
             <img src="https://img.shields.io/badge/Excel-217346?logo=microsoftexcel&logoColor=fff&style=for-the-badge" alt="Excel"/>
@@ -210,11 +219,10 @@
 
   <hr class="divider"/>
 
-  <!-- CURSOS Y CERTIFICACIONES -->
+  <!-- CURSOS -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">04</span>
-      <h2 class="section-title">Certificaciones</h2>
+      <h2 class="section-title">Cursos</h2>
     </div>
     <div class="courses-grid fade-in">
       <div class="course-card">
@@ -227,7 +235,7 @@
       <div class="course-card">
         <div>
           <div class="course-name">Fundamentals of Agile Project Management</div>
-          <div class="course-issuer">Gestión de proyectos Ágiles</div>
+          <div class="course-issuer">Gestión de proyectos ágiles</div>
           <div class="course-institution">PMI</div>
         </div>
       </div>
@@ -246,7 +254,6 @@
   <!-- IDIOMAS -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">05</span>
       <h2 class="section-title">Idiomas</h2>
     </div>
     <div class="lang-grid fade-in">
@@ -270,11 +277,10 @@
   <!-- INTERESES -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">06</span>
       <h2 class="section-title">Intereses</h2>
     </div>
     <div class="interests-row fade-in">
-      <div class="interest-pill">Robótica e IA aplicada</div>
+      <div class="interest-pill">Robótica</div>
       <div class="interest-pill">Energías renovables</div>
       <div class="interest-pill">Minería e industria</div>
       <div class="interest-pill">Finanzas</div>
