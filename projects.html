@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Proyectos — Alonso Romero</title>
+  <title>Proyectos — Alonso Romero, Ingeniero de IA</title>
+  <meta name="description" content="Proyectos de IA aplicada de Alonso Romero: control de turbinas eólicas con aprendizaje por refuerzo, análisis deportivo con visión por computadora y más. Problema, modelo e impacto medible."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://agromeros.github.io/projects.html"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root{--bg:#F7F5F1;--text:#1A1A18;--muted:#6B6B65;--accent:#1D4E3F;--accent-light:#E8F0ED;--border:#DDD9D0;--white:#FFFFFF;}
@@ -12,59 +15,59 @@
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(247,245,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
     .nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
-    .nav-links{display:flex;gap:2.5rem;list-style:none;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-right{display:flex;align-items:center;gap:2.5rem;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.9rem;transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-cta{display:inline-block;padding:0.55rem 1.35rem;background:var(--accent);color:var(--white)!important;text-decoration:none;font-size:0.85rem;font-weight:500;border-radius:2px;transition:opacity 0.2s;}
+    .nav-cta:hover{opacity:0.88;}
     .page-header{padding:10rem 4rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
-    .page-label{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1.5rem;}
-    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text);margin-bottom:1rem;}
-    .page-header h1 em{font-style:italic;color:var(--accent);}
-    .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:680px;}
+    .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;}
+    .page-header p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;}
     section{max-width:1200px;margin:0 auto;padding:5rem 4rem;}
-    .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
-    .section-number{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
-    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;color:var(--text);}
+    .section-header{margin-bottom:3rem;}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-0.02em;color:var(--text);}
     .divider{border:none;border-top:1px solid var(--border);margin:0 4rem;}
 
     /* PROJECT FULL */
     .project-full{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1.5rem;}
     .project-full-header{padding:2.5rem 2.5rem 0;}
     .project-full-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
-    .project-tag{display:inline-block;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.2rem 0.6rem;border-radius:2px;}
+    .project-tag{display:inline-block;font-size:0.7rem;font-weight:500;color:var(--accent);background:var(--accent-light);padding:0.2rem 0.6rem;border-radius:2px;}
     .project-gh-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:500;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;transition:border-color 0.2s,color 0.2s;}
     .project-gh-link:hover{border-color:var(--accent);color:var(--accent);}
-    .project-title{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.2;}
+    .project-title{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.3;}
     .project-desc{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.75rem;max-width:800px;}
 
     /* METRICS BAND */
     .metrics-band{background:var(--accent);padding:2rem 2.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;}
     .metric-block{padding:0 1.5rem 0 0;}
     .metric-block:first-child{padding-left:0;}
-    .metric-country{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.25rem;}
+    .metric-country{font-size:0.7rem;color:rgba(255,255,255,0.65);margin-bottom:0.25rem;}
     .metric-value{font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;line-height:1;}
-    .metric-label{font-size:0.7rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;letter-spacing:0.04em;}
+    .metric-label{font-size:0.75rem;color:rgba(255,255,255,0.8);margin-top:0.3rem;line-height:1.4;}
 
     /* PROJECT BODY */
     .project-full-body{padding:2.5rem;}
-    .project-section-title{ font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border);}
-    .project-model{ display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:center; margin-bottom:2.5rem;}
-    .project-model-image{ border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--white);}
-    .project-model-image img{ width:100%; display:block;}
-    .project-model-text{ font-size:0.9rem; color:var(--muted); line-height:1.7;}
-    .results-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
-    .result-card{ border:1px solid var(--border); border-radius:4px; padding:1.5rem; background:var(--bg);}
-    .result-card h4{ font-family:'DM Serif Display',serif; font-size:1.2rem; margin-bottom:1rem; color:var(--text); }
-    .result-card ul{ list-style:none; display:flex; flex-direction:column; gap:0.9rem;}
-    .result-card li{ font-size:0.9rem; color:var(--text); line-height:1.5;}
-    .result-card strong{ color:var(--accent);}
+    .project-section-title{font-size:0.85rem;font-weight:700;color:var(--accent);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+    .project-model{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;margin-bottom:2.5rem;}
+    .project-model-image{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white);}
+    .project-model-image img{width:100%;display:block;}
+    .project-model-text{font-size:0.9rem;color:var(--muted);line-height:1.7;}
+    .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+    .result-card{border:1px solid var(--border);border-radius:4px;padding:1.5rem;background:var(--bg);}
+    .result-card h4{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1rem;color:var(--text);}
+    .result-card ul{list-style:none;display:flex;flex-direction:column;gap:0.9rem;}
+    .result-card li{font-size:0.9rem;color:var(--text);line-height:1.5;}
+    .result-card strong{color:var(--accent);}
     .project-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
     .project-detail-block p{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;}
     .project-detail-block ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
     .project-detail-block ul li{font-size:0.9rem;color:var(--muted);font-weight:300;padding-left:1rem;position:relative;}
-    .project-detail-block ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
+    .project-detail-block ul li::before{content:'—';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
     .project-results-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
     .project-results-list li{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7;padding-left:1rem;position:relative;}
-    .project-results-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
+    .project-results-list li::before{content:'—';position:absolute;left:0;color:var(--accent);font-size:0.8rem;}
     .project-result-image{margin-top:2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--bg);}
     .project-result-image img{width:100%;display:block;object-fit:cover;}
     .project-image-caption{padding:0.9rem 1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
@@ -76,8 +79,7 @@
     footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
     footer p{font-size:0.8rem;color:var(--muted);}
     .footer-philosophy{font-family:'DM Serif Display',serif;font-style:italic;font-size:0.85rem;color:var(--accent);}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;}
     .fade-in.visible{opacity:1;transform:translateY(0);}
     @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header{padding:8rem 1.5rem 3rem;}section{padding:4rem 1.5rem;}.divider{margin:0 1.5rem;}.metrics-band{grid-template-columns:repeat(2,1fr);gap:1.5rem;}.project-detail-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
   </style>
@@ -86,24 +88,24 @@
 
   <nav>
     <a href="index.html" class="nav-logo">Alonso Romero</a>
-    <ul class="nav-links">
-      <li><a href="about.html">Sobre mí</a></li>
-      <li><a href="projects.html" class="active">Proyectos</a></li>
-      <li><a href="experience.html">Experiencia</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="projects.html" class="active">Proyectos</a></li>
+        <li><a href="experience.html">Experiencia</a></li>
+      </ul>
+      <a href="mailto:agromero@miuandes.cl" class="nav-cta">Contactar</a>
+    </div>
   </nav>
 
   <div class="page-header">
-    <span class="page-label">Proyectos</span>
-    <h1>Sistemas de IA con <em>resultados medibles.</em></h1>
-    <p>Cada proyecto explora una herramienta de IA aplicada a un dominio distinto. Mi objetivo es construir un portafolio que muestre tanto la diversidad de aplicaciones como la profundidad técnica.</p>
+    <h1>Cada proyecto parte de un problema real y teermina con una solución de vanguardia.</h1>
+    <p>Predicción, clasificación, segmentación, detección, comprensión, generación y control aplicados a dominios donde una mala decisión cuesta caro.</p>
   </div>
 
-  <!-- SECCIÓN 01: INVESTIGACIÓN APLICADA -->
+  <!-- SECCIÓN: INVESTIGACIÓN APLICADA -->
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">01</span>
       <h2 class="section-title">Investigación aplicada</h2>
     </div>
 
@@ -124,80 +126,65 @@
       <div class="project-full-body">
 
         <div class="project-section-title">Problema</div>
-      
+
         <p class="project-desc" style="margin-bottom:2.5rem;max-width:none;">
-          La velocidad del viento es estocástica, no se puede saber con certeza su disponibilidad. Además, los controladores tradicionales reaccionan al viento observado y suelen asumir comportamientos lineales. Esto limita su capacidad para operar bajo incertidumbre y equilibrar simultáneamente captura energética, estabilidad del rotor y desgaste mecánico.
+          La velocidad del viento es estocástica: no se puede saber con certeza su disponibilidad. Los controladores tradicionales reaccionan al viento ya observado y suelen asumir comportamientos lineales, lo que limita su capacidad de operar bajo incertidumbre y equilibrar simultáneamente captura energética, estabilidad del rotor y desgaste mecánico.
         </p>
-      
+
         <div class="project-section-title">Modelo</div>
-      
+
         <div class="project-model">
-      
+
           <div class="project-model-image">
-            <img src="Images\Projects\arquitectura_tesis.png" alt="Arquitectura híbrida LSTM-DRL">
+            <img src="Images\Projects\arquitectura_tesis.png" alt="Diagrama de la arquitectura híbrida LSTM y aprendizaje por refuerzo profundo (DDPG) para control de pitch en turbinas eólicas">
           </div>
-      
+
           <div class="project-model-text">
-            Arquitectura híbrida que combina una red LSTM para anticipar la velocidad del viento y un agente DDPG para ajustar dinámicamente el ángulo de pitch con una función de recompensa multiobjetivo que busca equilibrar la captura energética, la estabilidad operacional y el desgaste mecánico.
+            Arquitectura híbrida que combina una red LSTM para anticipar la velocidad del viento y un agente DDPG que ajusta dinámicamente el ángulo de pitch, guiado por una función de recompensa multiobjetivo que equilibra captura energética, estabilidad operacional y desgaste mecánico.
           </div>
-      
+
         </div>
-      
+
         <div class="project-section-title">Resultados</div>
-      
+
         <div class="results-grid">
           <div class="result-card">
             <h4>Caso Chile</h4>
-      
+
             <ul>
               <li>⚡ Captura un <strong>20%</strong> más potencia que la observada en el escenario real.</li>
-      
+
               <li>🔄 Reduce un <strong>49%</strong> la variabilidad de la velocidad del rotor.</li>
-      
+
               <li>🎯 Reduce un <strong>93%</strong> el movimiento del controlador de paso (pitch controller).</li>
-      
+
               <li>📈 Alcanzó una eficiencia de <strong>806.635</strong>, superando tanto los datos reales como el modelo con acceso al viento real.</li>
             </ul>
           </div>
-      
+
           <div class="result-card">
             <h4>Caso Suiza</h4>
-      
+
             <ul>
               <li>⚡ Captura el <strong>97%</strong> de la potencia observada en el escenario real.</li>
-      
+
               <li>🔄 Reduce un <strong>72%</strong> la variabilidad de la velocidad del rotor.</li>
-      
+
               <li>🎯 Reduce un <strong>90%</strong> el movimiento del controlador de paso (pitch controller).</li>
-      
+
               <li>📈 Alcanzó una eficiencia de <strong>0.356</strong>, superando los datos reales y el modelo que ve el viento real.</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- COMING SOON -->
-    <!--
-    <div style="background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:2rem;">
-        <span class="project-tag" style="margin-bottom:1rem;display:inline-block;">En desarrollo</span>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.3;">Optimización de portafolio de inversión</h3>
-        <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;">Aplicación de técnicas de optimización y aprendizaje por refuerzo para la construcción y gestión dinámica de portafolios financieros.</p>
-    </div>
-    
-    <div style="background:var(--white);border:1px dashed var(--border);border-radius:4px;padding:2rem;">
-        <span class="project-tag" style="margin-bottom:1rem;display:inline-block;">En desarrollo</span>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.3;"> Monitoreo de Fauna </h3>
-        <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;">Aplicación y comparación de técnicas de visión por computadora para la identificación y clasificación de especies</p>
-    </div>
   </section>
-  -->
   <hr class="divider"/>
 
-  <!-- SECCIÓN 02: IA APLICADA A PERSONAS -->
-  <!--
+  <!-- SECCIÓN: IA APLICADA A PERSONAS -->
+   <!--
   <section>
     <div class="section-header fade-in">
-      <span class="section-number">02</span>
       <h2 class="section-title">IA aplicada a personas</h2>
     </div>
 
@@ -209,7 +196,7 @@
         <span class="project-tag">Sport</span>
       </div>
       <h2 class="project-title">Formance: Form + Performance</h2>
-      <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;"> Plataforma de análisis deportivo basada en visión por computadora que evalúa movimientos en diferentes disciplinas. Detecta posturas, calcula métricas clave y entrega retroalimentación visual y textual simple, ayudando a mejorar técnica y rendimiento de forma clara, motivadora y escalable. Primera fase del proyecto: Golf swings</p>
+      <p style="font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;">Plataforma de análisis deportivo basada en visión por computadora que evalúa movimientos en distintas disciplinas: detecta posturas, calcula métricas clave y entrega retroalimentación visual y textual simple, para mejorar la técnica y el rendimiento de forma clara y escalable. Primera fase: swings de golf.</p>
     </div>
   </section>
   -->
